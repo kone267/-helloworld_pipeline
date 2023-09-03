@@ -16,16 +16,7 @@ pipeline {
             steps {
                 echo 'Deploy Step'
                 sleep 10
-            }
-        }
-        stage('Docker') {
-            steps {
-                echo 'Image step'
-            }
-        }
-    }
-}
-pipeline {
+            }pipeline {
     agent any
     tools{
         maven 'M2_HOME'
@@ -48,6 +39,14 @@ pipeline {
                 echo 'Deploy Step'
                 sleep 10
             }
+        }
+        stage('Docker') {
+            steps {
+                echo 'Image step'
+            }
+        }
+    }
+}
         }
         stage('Docker') {
             steps {
